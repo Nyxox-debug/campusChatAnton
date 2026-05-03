@@ -86,7 +86,6 @@ export async function sendMessage(userMessage, role) {
   isLoading.set(false)
 }
 
-// Production: swap sendMessage for this
 export async function sendMessageWithAI(userMessage, role, history) {
   isLoading.set(true)
   const systemPrompt = role === 'student'

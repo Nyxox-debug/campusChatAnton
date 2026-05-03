@@ -83,10 +83,8 @@
 </script>
 
 <div class="app">
-    <!-- ── HEADER ── -->
     <header class="header">
         <div class="header-brand">
-            <!-- Logo: black bg, white cap icon -->
             <div class="logo" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M12 3L2 8.5l10 5.5 10-5.5L12 3z" fill="#fff" />
@@ -140,7 +138,6 @@
         </div>
     </header>
 
-    <!-- ── ROLE SCREEN ── -->
     {#if !selectedRole}
         <div class="role-screen">
             <div class="role-content">
@@ -274,7 +271,6 @@
             </div>
         </div>
     {:else}
-        <!-- ── CHAT VIEW ── -->
         <div class="chat-view">
             <div class="messages" bind:this={chatContainer}>
                 <div class="messages-inner">
@@ -287,7 +283,6 @@
                 </div>
             </div>
 
-            <!-- Quick replies -->
             {#if !$isLoading}
                 <div class="quick-bar">
                     {#each quickReplies[selectedRole] as reply}
@@ -300,7 +295,6 @@
                 </div>
             {/if}
 
-            <!-- Input -->
             <div class="input-bar">
                 <div class="input-wrap">
                     <textarea
@@ -347,7 +341,6 @@
 </div>
 
 <style>
-    /* ─── Shell ────────────────────────────────────── */
     .app {
         display: flex;
         flex-direction: column;
@@ -359,7 +352,6 @@
         width: 100%;
     }
 
-    /* ─── Header ───────────────────────────────────── */
     .header {
         display: flex;
         align-items: center;
@@ -380,7 +372,6 @@
         flex: 1;
     }
 
-    /* Fixed logo: black bg, white icon — NOT all white */
     .logo {
         width: 34px;
         height: 34px;
@@ -462,7 +453,6 @@
         border-color: #444;
     }
 
-    /* ─── Role screen ──────────────────────────────── */
     .role-screen {
         flex: 1;
         display: flex;
@@ -519,7 +509,6 @@
         line-height: 1.5;
     }
 
-    /* Role cards */
     .role-cards {
         display: flex;
         flex-direction: column;
@@ -621,7 +610,6 @@
         letter-spacing: 0.03em;
     }
 
-    /* Screen footer */
     .screen-footer {
         display: flex;
         align-items: center;
@@ -647,7 +635,6 @@
         color: #666;
     }
 
-    /* ─── Chat view ────────────────────────────────── */
     .chat-view {
         flex: 1;
         display: flex;
@@ -679,7 +666,6 @@
         flex-direction: column;
     }
 
-    /* Quick replies */
     .quick-bar {
         display: flex;
         gap: 7px;
@@ -716,7 +702,6 @@
         background: #111;
     }
 
-    /* Input */
     .input-bar {
         padding: 10px 12px;
         padding-bottom: max(10px, env(safe-area-inset-bottom));
@@ -746,7 +731,7 @@
         outline: none;
         color: #e8e8e8;
         font-family: "IBM Plex Sans", sans-serif;
-        font-size: 16px; /* 16px prevents iOS zoom */
+        font-size: 16px;
         font-weight: 400;
         resize: none;
         line-height: 1.5;
@@ -788,7 +773,6 @@
         transform: none;
     }
 
-    /* ─── Desktop ──────────────────────────────────── */
     @media (min-width: 641px) {
         .app {
             border-left: 1px solid #111;
@@ -796,23 +780,22 @@
         }
     }
 
-    /* ─── Mobile header fix ────────────────────────── */
     .header-brand {
-        overflow: hidden; /* ADD this — prevents badge bleeding into actions */
+        overflow: hidden;
     }
 
     .brand-text {
-        overflow: hidden; /* ADD this — clips if still too wide */
+        overflow: hidden;
         flex-wrap: nowrap;
     }
 
     @media (max-width: 420px) {
         .gh-label {
-            display: none; /* hide "View source" text, keep icon only */
+            display: none;
         }
 
         .gh-link {
-            padding: 5px 8px; /* tighten padding when icon-only */
+            padding: 5px 8px;
         }
 
         .brand-name {
