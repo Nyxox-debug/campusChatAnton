@@ -806,4 +806,40 @@
             white-space: nowrap;
         }
     }
+    .app {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        height: -webkit-fill-available;
+        background: #000;
+        max-width: 640px;
+        margin: 0 auto;
+        width: 100%;
+        overflow: hidden; /* ADD THIS */
+    }
+
+    .chat-view {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0; /* CRITICAL — without this, flex children won't shrink */
+        overflow: hidden;
+    }
+
+    .messages {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        scrollbar-color: #1a1a1a transparent;
+        min-height: 0; /* ADD THIS — fixes the scroll in webkit/safari */
+    }
+    .messages-inner {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        min-height: 0; /* ADD THIS */
+    }
 </style>
