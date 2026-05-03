@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-const GITHUB_URL = ''
+const GITHUB_URL = 'https://github.com/Nyxox-debug/campusChatAnton'
 
 export { GITHUB_URL }
 
